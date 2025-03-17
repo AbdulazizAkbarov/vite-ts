@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Student } from "../Types";
 import Modal from "../Modal";
 import useMyStore from "../Store/Store";
-import Item from "antd/es/list/Item";
 function Students() {
   const students = useMyStore<Student[]>((state) => state.students);
   const [modal, setModal] = useState(false);
