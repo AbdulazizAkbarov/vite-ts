@@ -8,7 +8,7 @@ function getRandom() {
 }
 
 function Modal({ setModal, modal }: any) {
-  const students = useMyStore((s) => s.students);
+  // const students = useMyStore((s) => s.students);
   const [form] = Form.useForm();
 
   const onSubmit = (val: any) => {

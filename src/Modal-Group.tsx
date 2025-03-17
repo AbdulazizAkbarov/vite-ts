@@ -6,12 +6,12 @@ function getRandom() {
 }
 
 function DrawerGroup({ setOpen, modal, setModal }: any) {
-  // const students = useMyStore((s) => s.students);
+  // const groups = useMyStore((s) => s.group);
   const [form] = Form.useForm();
 
   const onSubmit = (values: any) => {
     useMyStore.setState((state) => ({
-      students: [...state.students, { ...values, id: getRandom() }],
+      group: [...state.group, { ...values, id: getRandom() }],
     }));
 
     form.resetFields();
