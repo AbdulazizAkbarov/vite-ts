@@ -1,5 +1,5 @@
 import Input from "antd/es/input/Input";
-import { Form, Switch, Drawer } from "antd";
+import { Form, Switch, Drawer, Select } from "antd";
 import { Button } from "antd";
 import useMyStore from "./Store/Store";
 
@@ -8,7 +8,8 @@ function getRandom() {
 }
 
 function Modal({ setModal, modal }: any) {
-  // const students = useMyStore((s) => s.students);
+    const group = useMyStore((s) => s.group);
+
   const [form] = Form.useForm();
 
   const onSubmit = (val: any) => {
@@ -66,6 +67,13 @@ function Modal({ setModal, modal }: any) {
           valuePropName="checked"
         >
           <Switch />
+        </Form.Item>
+        <Form.Item label="Guruh nomi" name="guruh_id">
+        <Select options={group.map((i)=>{
+            return{
+              value: i.id, label: i.guruh_name 
+            }
+          })}/>
         </Form.Item>
 
         <Form.Item>

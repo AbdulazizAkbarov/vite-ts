@@ -6,7 +6,7 @@ function getRandom() {
 }
 
 function DrawerGroup({ setOpen, modal, setModal }: any) {
-  // const groups = useMyStore((s) => s.group);
+  const group = useMyStore((s) => s.group);
   const [form] = Form.useForm();
 
   const onSubmit = (values: any) => {
@@ -31,8 +31,8 @@ function DrawerGroup({ setOpen, modal, setModal }: any) {
       open={modal}
     >
       <Form form={form} layout="vertical" onFinish={onSubmit}>
-        <Form.Item label="Ism" name="firstName">
-          <Input />
+        <Form.Item label="Nomi" name="guruh_name">
+        <Input/>
         </Form.Item>
 
         <Form.Item label="Students Count" name="students_count">
@@ -42,6 +42,8 @@ function DrawerGroup({ setOpen, modal, setModal }: any) {
         <Form.Item label="Faolligi" name="active" valuePropName="checked">
           <Switch />
         </Form.Item>
+
+      
         <Form.Item>
           <Button
             onClick={() => form.submit()}

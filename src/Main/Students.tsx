@@ -1,11 +1,13 @@
 import { Table, Switch } from "antd";
 import { Button } from "antd";
 import { useState } from "react";
-import { Student } from "../Types";
+import { Groups, Student } from "../Types";
 import Modal from "../Modal";
 import useMyStore from "../Store/Store";
 function Students() {
   const students = useMyStore<Student[]>((state) => state.students);
+  const group = useMyStore<Groups[]>((state) => state.group);
+
   const [modal, setModal] = useState(false);
 
   return (
@@ -43,6 +45,16 @@ function Students() {
             dataIndex: "age",
           },
           {
+            title: "Guruh",
+            dataIndex: "guruh_id",
+            render: (guruh_id) => {
+              const s = group.find((a) => {
+                return a.id === guruh_id;
+              });
+              return s?.guruh_name;
+            },
+          },
+          {
             title: "Faolligi",
             dataIndex: "active",
             render: (active, all) => {
@@ -70,7 +82,7 @@ function Students() {
 
           {
             title: "Delate and Edit",
-            render: ( all) => {
+            render: (all) => {
               return (
                 <div className=" flex gap-2">
                   <Button
@@ -86,9 +98,14 @@ function Students() {
                   >
                     Delate
                   </Button>
-                  <Button type="primary" onClick={()=>{
-                    setModal(true)
-                  }}>Edit</Button>
+                  <Button
+                    type="primary"
+                    onClick={() => {
+                      setModal(true);
+                    }}
+                  >
+                    Edit
+                  </Button>
                 </div>
               );
             },

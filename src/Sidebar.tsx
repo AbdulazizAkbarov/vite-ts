@@ -5,7 +5,7 @@ import {
   ReconciliationOutlined,
   UserAddOutlined,
 } from "@ant-design/icons";
-import Link from "antd/es/typography/Link";
+import { Link } from "react-router";
 function Sidebar({ collapsed }: { collapsed: boolean }) {
   return (
     <Menu
@@ -20,17 +20,17 @@ function Sidebar({ collapsed }: { collapsed: boolean }) {
         {
           icon: <AppstoreOutlined />,
           key: 1,
-          label: <Link href={"/"}>Home Page</Link>,
+          label: <Link to={"/"}>Home Page</Link>,
         },
         {
           icon: <ReconciliationOutlined />,
           key: 2,
-          label: <Link href={"student"}>Students</Link>,
+          label: <Link to={"student"}>Students</Link>,
         },
         {
           icon: <UserAddOutlined />,
           key: 3,
-          label: <Link href={"groups"}>Groups</Link>,
+          label: <Link to={"groups"}>Groups</Link>,
         },
       ]}
     />
