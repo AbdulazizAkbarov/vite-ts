@@ -6,7 +6,7 @@ function getRandom() {
 }
 
 function DrawerGroup({ setOpen, modal, setModal }: any) {
-  const group = useMyStore((s) => s.group);
+  // const group = useMyStore((s) => s.group);
   const [form] = Form.useForm();
 
   const onSubmit = (values: any) => {
