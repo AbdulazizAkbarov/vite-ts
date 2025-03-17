@@ -70,7 +70,7 @@ function Students() {
 
           {
             title: "Delate and Edit",
-            render: (delet, all) => {
+            render: ( all) => {
               return (
                 <div className=" flex gap-2">
                   <Button
