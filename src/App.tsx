@@ -1,5 +1,4 @@
 import { Button } from "antd";
-import Students from "./Main/Students";
 import Sidebar from "./Sidebar";
 import {MenuUnfoldOutlined,MenuFoldOutlined} from "@ant-design/icons";
 import {useState} from 'react'
