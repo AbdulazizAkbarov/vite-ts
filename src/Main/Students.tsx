@@ -4,11 +4,14 @@ import { useState } from "react";
 import { Groups, Student } from "../Types";
 import Modal from "../Modal";
 import useMyStore from "../Store/Store";
+import EditStudents from "./Edit-student";
 function Students() {
   const students = useMyStore<Student[]>((state) => state.students);
   const group = useMyStore<Groups[]>((state) => state.group);
 
   const [modal, setModal] = useState(false);
+  const [modal2, setModal2] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState(null);
 
   return (
     <div className="relative w-full">
@@ -101,7 +104,8 @@ function Students() {
                   <Button
                     type="primary"
                     onClick={() => {
-                      setModal(true);
+                      setModal2(true);
+                      setSelectedStudent(all);
                     }}
                   >
                     Edit
@@ -115,6 +119,13 @@ function Students() {
       />
 
       {modal ? <Modal setModal={setModal} modal={modal} /> : null}
+      {modal2 ? (
+        <EditStudents
+          setModal2={setModal2}
+          modal2={modal2}
+          selectedStudent={selectedStudent}
+        />
+      ) : null}
     </div>
   );
 }

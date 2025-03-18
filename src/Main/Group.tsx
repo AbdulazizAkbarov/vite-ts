@@ -4,9 +4,14 @@ import { useState } from "react";
 import { Groups } from "../Types";
 import useMyStore from "../Store/Store";
 import ModalGroup from "../Modal-Group";
+
+import EditGroup from "./Edit-group";
 function Group() {
   const group = useMyStore<Groups[]>((state) => state.group);
   const [modal, setModal] = useState(false);
+  const [modal1, setModal1] = useState(false);
+  const [selectedGroup, setSelectedGruup] = useState(null);
+
 
   return (
     <div className="relative w-full">
@@ -85,8 +90,10 @@ function Group() {
                   </Button>
                   <Button
                     type="primary"
-                    onClick={() => {
-                      
+                    onClick={()=>{
+                      setModal1(true)
+                      setSelectedGruup(all);
+
                     }}
                   >
                     Edit
@@ -99,7 +106,16 @@ function Group() {
         dataSource={group}
       />
 
-      {modal ? <ModalGroup setModal={setModal} modal={modal} /> : null}
+      {modal ? (
+        <ModalGroup
+          setModal={setModal}
+          modal={modal}
+          setModal1={setModal1}
+          modal1={modal1}
+        />
+      ) : null}
+
+      {modal1 ? <EditGroup setModal1={setModal1} modal1={modal1} selectedGroup={selectedGroup} setSelectedGruup={setSelectedGruup} /> : null}
     </div>
   );
 }
