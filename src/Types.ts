@@ -13,3 +13,16 @@ export type Groups = {
   active: boolean;
   students_count: number;
 };
+
+export type product_type = {
+  id: number;
+  name: string;
+  catigories_id: number;
+  narxi: number;
+};
+
+export type Catigories = {
+  id: number;
+  name: string;
+  img: string;
+};

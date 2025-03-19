@@ -3,6 +3,8 @@ import { Routes } from "react-router";
 import Home from "./Home";
 import Students from "./Students";
 import Group from "./Group";
+import Product from "./Product";
+import Catigories from "./Catigories";
 
 function MainPage() {
   return (
@@ -11,6 +13,9 @@ function MainPage() {
         <Route path="/" element={<Home />} />
         <Route path="/student" element={<Students />} />
         <Route path="/groups" element={<Group />} />
+        <Route path="/product" element={<Product/>} />
+        <Route path="/catigories" element={<Catigories />} />
+
       </Routes>
     </div>
   );

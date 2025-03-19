@@ -11,7 +11,7 @@ const useMyStore = create(() => {
         lastName: "Akbarov",
         age: 18,
         active: true,
-        guruh_id:1
+        guruh_id: 1,
       },
     ],
     group: [
@@ -26,6 +26,31 @@ const useMyStore = create(() => {
         guruh_name: "Guruh2",
         active: true,
         students_count: 13,
+      },
+    ],
+    product: [
+      {
+        name: "Non",
+        id: getRandom(),
+        catigories_id: 65635,
+        narxi: 32000,
+      },
+    ],
+    catigories: [
+      {
+        name: "Non Mahsulotlari",
+        id: getRandom(),
+        rasm: "asdsdf",
+      },
+      {
+        name: "Don Mahsulotlari",
+        id: getRandom(),
+        rasm: "asdsdf",
+      },
+      {
+        name: "Suv Mahsulotlari",
+        id: getRandom(),
+        rasm: "asdsdf",
       },
     ],
   };

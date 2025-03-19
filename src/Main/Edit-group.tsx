@@ -1,12 +1,12 @@
 import { Drawer, Form, Input, Switch, Button } from "antd";
 import useMyStore from "../Store/Store";
-import { useEffect } from "react"
+import { useEffect } from "react";
 
 function getRandom() {
   return Math.floor(Math.random() * 1000);
 }
 
-function EditGroup({  modal1, setModal1,selectedGroup}: any) {
+function EditGroup({ modal1, setModal1, selectedGroup }: any) {
   const [form] = Form.useForm();
 
   const onSubmit = (values: any) => {
@@ -20,8 +20,12 @@ function EditGroup({  modal1, setModal1,selectedGroup}: any) {
   };
 
   useEffect(() => {
-    form.setFieldsValue({guruh_name:selectedGroup.guruh_name, students_count: selectedGroup.students_count, active:selectedGroup.active})
-  }, [])  
+    form.setFieldsValue({
+      guruh_name: selectedGroup.guruh_name,
+      students_count: selectedGroup.students_count,
+      active: selectedGroup.active,
+    });
+  }, []);
 
   return (
     <Drawer
@@ -31,12 +35,11 @@ function EditGroup({  modal1, setModal1,selectedGroup}: any) {
         form.resetFields();
         if (setModal1) setModal1(false);
       }}
-      
       open={modal1}
     >
       <Form form={form} layout="vertical" onFinish={onSubmit}>
         <Form.Item label="Nomi" name="guruh_name">
-        <Input/>
+          <Input />
         </Form.Item>
 
         <Form.Item label="Students Count" name="students_count">
@@ -47,7 +50,6 @@ function EditGroup({  modal1, setModal1,selectedGroup}: any) {
           <Switch />
         </Form.Item>
 
-      
         <Form.Item>
           <Button
             onClick={() => form.submit()}

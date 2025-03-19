@@ -1,21 +1,21 @@
-import { Drawer, Form, Input, Switch, Button } from "antd";
+import { Drawer, Form, Input, Button } from "antd";
 import useMyStore from "./Store/Store";
 
 function getRandom() {
   return Math.floor(Math.random() * 1000);
 }
 
-function DrawerGroup({ setOpen, modal, setModal }: any) {
+function ModalCatigories({ setOpen, modal3, setModal3 }: any) {
   const [form] = Form.useForm();
 
   const onSubmit = (values: any) => {
     useMyStore.setState((state) => ({
-      group: [...state.group, { ...values, id: getRandom() }],
+      catigories: [...state.catigories, { ...values, id: getRandom() }],
     }));
 
     form.resetFields();
     if (setOpen) setOpen(false);
-    if (setModal) setModal(false);
+    if (setModal3) setModal3(false);
   };
 
   return (
@@ -25,21 +25,17 @@ function DrawerGroup({ setOpen, modal, setModal }: any) {
       onClose={() => {
         form.resetFields();
         if (setOpen) setOpen(false);
-        if (setModal) setModal(false);
+        if (setModal3) setModal3(false);
       }}
-      open={modal}
+      open={modal3}
     >
       <Form form={form} layout="vertical" onFinish={onSubmit}>
-        <Form.Item label="Nomi" name="guruh_name">
+        <Form.Item label="Nomi" name="name">
           <Input />
         </Form.Item>
 
-        <Form.Item label="Students Count" name="students_count">
-          <Input type="number" />
-        </Form.Item>
-
-        <Form.Item label="Faolligi" name="active" valuePropName="checked">
-          <Switch />
+        <Form.Item label="Rasmi" name="rasm">
+          <Input />
         </Form.Item>
 
         <Form.Item>
@@ -56,4 +52,4 @@ function DrawerGroup({ setOpen, modal, setModal }: any) {
   );
 }
 
-export default DrawerGroup;
+export default ModalCatigories;

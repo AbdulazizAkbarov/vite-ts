@@ -32,6 +32,15 @@ function Sidebar({ collapsed }: { collapsed: boolean }) {
           key: 3,
           label: <Link to={"groups"}>Groups</Link>,
         },
+        {
+          icon: <UserAddOutlined />,
+          key: 4,
+          label: <Link to={"product"}>Product</Link>,
+        },    {
+          icon: <UserAddOutlined />,
+          key: 5,
+          label: <Link to={"catigories"}>Catigories</Link>,
+        },
       ]}
     />
   );
