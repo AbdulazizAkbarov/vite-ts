@@ -14,7 +14,7 @@ export type Groups = {
   students_count: number;
 };
 
-export type product_type = {
+export type ProductType = {
   id: number;
   name: string;
   catigories_id: number;
@@ -26,3 +26,9 @@ export type Catigories = {
   name: string;
   img: string;
 };
+export type Buyurtma ={
+  student_id:number
+  mahsulot_id:number
+  soni:number
+  address:string
+}

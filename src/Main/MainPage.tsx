@@ -5,6 +5,7 @@ import Students from "./Students";
 import Group from "./Group";
 import Product from "./Product";
 import Catigories from "./Catigories";
+import Buyurtma from "./Buyurtma";
 
 function MainPage() {
   return (
@@ -15,6 +16,8 @@ function MainPage() {
         <Route path="/groups" element={<Group />} />
         <Route path="/product" element={<Product/>} />
         <Route path="/catigories" element={<Catigories />} />
+        <Route path="/buyurtma" element={<Buyurtma />} />
+
 
       </Routes>
     </div>

@@ -46,20 +46,10 @@ function Product() {
               return s?.name;
             },
           },
-
         ]}
         dataSource={product1}
-        
-
       />
-       {modal2 ? (
-        <ModalGroup
-          setModal2={setModal2}
-          modal2={modal2}
-        //   setModal1={setModal1}
-        //   modal1={modal1}
-        />
-      ) : null}
+      {modal2 ? <ModalGroup setModal2={setModal2} modal2={modal2} /> : null}
     </div>
   );
 }

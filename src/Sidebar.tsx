@@ -41,6 +41,11 @@ function Sidebar({ collapsed }: { collapsed: boolean }) {
           key: 5,
           label: <Link to={"catigories"}>Catigories</Link>,
         },
+        {
+          icon: <UserAddOutlined />,
+          key: 6,
+          label: <Link to={"buyurtma"}>Buyurtma</Link>,
+        },
       ]}
     />
   );

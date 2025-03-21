@@ -1,12 +1,23 @@
 import { create } from "zustand";
+import { Buyurtma, Catigories, Groups, Student, ProductType } from "../Types";
 function getRandom() {
   return Math.floor(Math.random() * 1000);
 }
-const useMyStore = create(() => {
-  return {
+
+type MyStoreType = {
+  students: Student[];
+  group: Groups[];
+  product: ProductType[];
+  catigories: Catigories[];
+  buyurtma: Buyurtma[];
+};
+const useMyStore = create<MyStoreType>(() => {
+  const student_id = getRandom();
+  const mahsulot_id = getRandom();
+  const initial: MyStoreType = {
     students: [
       {
-        id: getRandom(),
+        id: student_id,
         firstName: "Abdulaziz",
         lastName: "Akbarov",
         age: 18,
@@ -21,17 +32,11 @@ const useMyStore = create(() => {
         active: true,
         students_count: 12,
       },
-      {
-        id: getRandom(),
-        guruh_name: "Guruh2",
-        active: true,
-        students_count: 13,
-      },
     ],
     product: [
       {
         name: "Non",
-        id: getRandom(),
+        id: mahsulot_id,
         catigories_id: 65635,
         narxi: 32000,
       },
@@ -40,20 +45,13 @@ const useMyStore = create(() => {
       {
         name: "Non Mahsulotlari",
         id: getRandom(),
-        rasm: "asdsdf",
-      },
-      {
-        name: "Don Mahsulotlari",
-        id: getRandom(),
-        rasm: "asdsdf",
-      },
-      {
-        name: "Suv Mahsulotlari",
-        id: getRandom(),
-        rasm: "asdsdf",
+        img: "asdsdf",
       },
     ],
+    buyurtma: [],
   };
+
+  return initial;
 });
 
 export default useMyStore;
