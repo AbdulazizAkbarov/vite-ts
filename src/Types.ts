@@ -31,4 +31,5 @@ export type Buyurtma ={
   mahsulot_id:number
   soni:number
   address:string
+  status:"qabul_qilindi"|"yetkazilmoqda"|"tugallandi"
 }

@@ -45,6 +45,10 @@ function Buyurtma() {
             title: "Address",
             dataIndex: "address",
           },
+          {
+            title: "Status",
+            dataIndex: "status",
+          },
         ]}
         dataSource={buyurtma}
       />
